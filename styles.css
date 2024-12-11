@@ -82,6 +82,7 @@ button {
   color: var(--white);
   font-weight: bold;
   font-size: 1.25rem;
+  margin: 1rem auto;
 }
 
 #burger {
@@ -135,7 +136,7 @@ main {
 
 #next-gen {
   grid-column: 1/3;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 #features {
@@ -193,11 +194,21 @@ footer ul {
   gap: 1rem;
 }
 footer button {
-  margin: 2rem auto 1rem auto;
+  margin: 1rem auto;
   max-width: 50%;
 }
 footer a {
   color: var(--very-light-gray);
+}
+footer p {
+  margin: 0;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
 }
 
 .attribution {
@@ -210,5 +221,54 @@ footer a {
   }
   .mobile {
     display: none;
+  }
+  header,
+  #next-gen,
+  #features,
+  #articles,
+  footer {
+    padding-inline: 9rem;
+  }
+  #features {
+    text-align: left;
+    gap: 2rem;
+    justify-content: center;
+    padding-block: 4rem;
+  }
+  #features hgroup {
+    width: 100%;
+  }
+  #features hgroup p {
+    width: 645px;
+  }
+  #features .feature {
+    flex-basis: 23%;
+  }
+  #articles {
+    width: auto;
+    margin-block: 1rem 5rem;
+    text-align: left;
+  }
+  #articles h2 {
+    width: 100%;
+  }
+  #articles img {
+    width: auto;
+    height: 50%;
+  }
+  #articles .article {
+    flex-basis: 23%;
+    margin: 0;
+    height: 500px;
+  }
+  #articles .article h3 {
+    margin: 0.5rem 0;
+  }
+  #articles .article p {
+    font-size: 16px;
+    margin: 0;
+  }
+  #articles .article small {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=styles.css.map */
