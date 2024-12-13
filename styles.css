@@ -29,6 +29,8 @@ body {
 
 header {
   background: var(--white);
+}
+header .wrapper {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -142,6 +144,8 @@ main {
 #features {
   grid-column: 1/3;
   background: var(--light-grayish-blue);
+}
+#features .wrapper {
   padding: 3rem 1rem;
   display: flex;
   flex-flow: row wrap;
@@ -150,6 +154,8 @@ main {
 
 #articles {
   grid-column: 1/3;
+}
+#articles .wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -181,6 +187,8 @@ main {
 footer {
   background: var(--dark-blue);
   color: var(--very-light-gray);
+}
+footer .wrapper {
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
@@ -215,6 +223,11 @@ footer p {
   padding: 1rem;
 }
 
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
 @media (width > 1024px) {
   .desktop {
     display: block;
@@ -222,26 +235,20 @@ footer p {
   .mobile {
     display: none;
   }
-  header,
-  #next-gen,
-  #features,
-  #articles,
-  footer {
-    padding-inline: 9rem;
-  }
-  #features {
+  #features .wrapper {
     text-align: left;
     gap: 2rem;
     justify-content: center;
     padding-block: 4rem;
+    flex-flow: row wrap;
   }
-  #features hgroup {
+  #features .wrapper hgroup {
     width: 100%;
   }
-  #features hgroup p {
+  #features .wrapper hgroup p {
     width: 645px;
   }
-  #features .feature {
+  #features .wrapper .feature {
     flex-basis: 23%;
   }
   #articles {
@@ -265,10 +272,19 @@ footer p {
     margin: 0.5rem 0;
   }
   #articles .article p {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
   }
   #articles .article small {
     font-size: 12px;
+  }
+  footer .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+  footer .wrapper .social-media img {
+    width: 20px;
+    height: 20px;
   }
 }/*# sourceMappingURL=styles.css.map */
