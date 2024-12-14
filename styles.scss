@@ -37,7 +37,6 @@ header {
 }
 nav {
     background: var(--white);
-    display: flex;
     ul {
         display: flex;
         flex-direction: column;
@@ -96,9 +95,6 @@ main {
     grid-template-rows: repeat(4, auto);
     row-gap: 1rem;
 }
-// main * {
-//     border: 1px solid red;
-// }
 #presentation {
     max-height: 320px;
     grid-column: 1/2;
@@ -212,19 +208,61 @@ footer {
     margin: auto;
 }
 @media (width > 1024px) {
+    body {
+        display: grid;
+    }
     .desktop {
         display: block;
     }
     .mobile {
         display: none;
     }
-    // header,
-    // #next-gen,
-    // #features,
-    // #articles,
-    // footer {
-    //     padding-inline: 9rem;
-    // }
+    header a,
+    footer a {
+        color: var(--grayish-blue);
+    }
+    main {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(3, auto);
+    }
+    header {
+        z-index: 2;
+        nav ul {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        button {
+            margin: 0;
+        }
+    }
+    #next-gen {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        text-align: left;
+        margin-block: 5rem;
+        .wrapper {
+            max-width: 450px;
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+    #presentation {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        overflow: visible;
+        picture {
+            img {
+                transform: translate(85px, -113px);
+                width: auto;
+                height: 770px;
+            }
+        }
+        img.mock {
+            transform: translate(175px, 44px);
+            width: 80%;
+        }
+    }
     #features {
         .wrapper{
             text-align: left;
@@ -275,10 +313,42 @@ footer {
     footer .wrapper {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: repeat(2, auto);
-        .social-media img {
-            width: 20px;
-            height: 20px;
+        grid-template-rows: repeat(3, auto);
+        .social-media {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            justify-content: flex-start;
+            padding: 0;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        #logo {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            justify-self: start;
+        }
+        ul {
+            grid-column: 2/3;
+            grid-row: 1/3;
+            display: inherit;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(3, 1fr);
+            grid-auto-flow: column;
+            justify-items: start;
+            max-width: 350px;
+        }
+        button {
+            max-width: 201px;
+            margin: 0;
+            justify-self: end;
+        }
+        .attribution {
+            grid-column: 1/4;
+            grid-row: 3/4;
+            justify-self: end;
+            padding: 0;
         }
     }
 }

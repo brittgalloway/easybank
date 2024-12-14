@@ -40,7 +40,6 @@ header .wrapper {
 
 nav {
   background: var(--white);
-  display: flex;
 }
 nav ul {
   display: flex;
@@ -229,11 +228,58 @@ footer p {
 }
 
 @media (width > 1024px) {
+  body {
+    display: grid;
+  }
   .desktop {
     display: block;
   }
   .mobile {
     display: none;
+  }
+  header a,
+  footer a {
+    color: var(--grayish-blue);
+  }
+  main {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, auto);
+  }
+  header {
+    z-index: 2;
+  }
+  header nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  header button {
+    margin: 0;
+  }
+  #next-gen {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: left;
+    margin-block: 5rem;
+  }
+  #next-gen .wrapper {
+    max-width: 450px;
+  }
+  #next-gen .wrapper h1 {
+    font-size: 3rem;
+  }
+  #presentation {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    overflow: visible;
+  }
+  #presentation picture img {
+    transform: translate(85px, -113px);
+    width: auto;
+    height: 770px;
+  }
+  #presentation img.mock {
+    transform: translate(175px, 44px);
+    width: 80%;
   }
   #features .wrapper {
     text-align: left;
@@ -281,10 +327,42 @@ footer p {
   footer .wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+  footer .wrapper .social-media {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-content: flex-start;
+    padding: 0;
   }
   footer .wrapper .social-media img {
     width: 20px;
     height: 20px;
+  }
+  footer .wrapper #logo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: start;
+  }
+  footer .wrapper ul {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: inherit;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
+    justify-items: start;
+    max-width: 350px;
+  }
+  footer .wrapper button {
+    max-width: 201px;
+    margin: 0;
+    justify-self: end;
+  }
+  footer .wrapper .attribution {
+    grid-column: 1/4;
+    grid-row: 3/4;
+    justify-self: end;
+    padding: 0;
   }
 }/*# sourceMappingURL=styles.css.map */
