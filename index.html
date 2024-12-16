@@ -11,7 +11,7 @@
   </style>
 
   <link rel="stylesheet" type="text/css" href="./styles.css">
-  
+  <script type="text/javascript" defer src="./nav.js"></script>
   <title>Frontend Mentor | Easybank landing page</title>
 
   <script>
@@ -24,7 +24,7 @@
         <img src="./images/logo.svg" alt="Easybank logo">
       </a>
       <nav>
-        <ul>
+        <ul id="toggleNav" class="close">
           <li>
             <a href="#">
               Home
@@ -51,7 +51,8 @@
             </a>
           </li>
         </ul>
-        <button id="burger" class="mobile" type="button" aria-label="Click here to open the navigation menu."></button>
+        <button id="burger" class="mobile close" type="button" aria-label="Click here to open the navigation menu."></button>
+        <div id="backdrop" class="close"></div>
       </nav>
       <button type="button" class="desktop">Request Invite</button>
     </div>
