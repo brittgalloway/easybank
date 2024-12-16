@@ -6,6 +6,10 @@
   --light-grayish-blue: hsl(220, 16%, 96%);
   --very-light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
+  --transition: 300ms;
+  --gradient: linear-gradient(to right, var(--lime-green) , var(--bright-cyan));
+  --light-green: hsl(136, 68%, 60%);
+  --light-cyan: hsl(192, 68%, 60%);
 }
 
 body {
@@ -68,6 +72,11 @@ h3 {
 a {
   text-decoration: none;
   color: var(--dark-blue);
+  transition: color var(--transition);
+}
+a:hover {
+  cursor: pointer;
+  color: var(--lime-green);
 }
 
 p {
@@ -79,11 +88,23 @@ button {
   border: none;
   border-radius: 50px;
   padding: 1rem 2rem;
-  background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+  background: var(--gradient);
   color: var(--white);
   font-weight: bold;
   font-size: 1.25rem;
   margin: 1rem auto;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color var(--transition);
+  background-size: 200%;
+  background-position: left;
+}
+
+button:hover {
+  background: linear-gradient(to right, var(--light-green), var(--light-cyan));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position var(--transition);
 }
 
 #burger {
@@ -217,6 +238,13 @@ footer p {
   padding: 1rem;
   justify-content: center;
 }
+.social-media svg {
+  fill: white;
+  transition: fill var(--transition);
+}
+.social-media svg:hover {
+  fill: var(--lime-green);
+}
 
 .attribution {
   padding: 1rem;
@@ -251,6 +279,16 @@ footer p {
   header nav ul {
     display: flex;
     flex-flow: row nowrap;
+  }
+  header nav ul a {
+    padding: 1.5rem 1rem;
+  }
+  header nav ul a:hover {
+    color: var(--dark-blue);
+    border-bottom: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: var(--gradient);
   }
   header button {
     margin: 0;
@@ -364,5 +402,6 @@ footer p {
     grid-row: 3/4;
     justify-self: end;
     padding: 0;
+    color: var(--grayish-blue);
   }
 }/*# sourceMappingURL=styles.css.map */
