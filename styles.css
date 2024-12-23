@@ -26,7 +26,7 @@ body {
   padding: 0;
   background-color: var(--very-light-gray);
 }
-body:has(.backrop.open) {
+body:has(.mobile.open) {
   overflow: hidden;
 }
 
